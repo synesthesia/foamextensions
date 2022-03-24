@@ -1,4 +1,9 @@
-# KaleidoFoam
+# FoamExtensions 
+
+A set of personal extensions for [Foam](https://foambubble.github.io/),  based on [MCluck90/kaleidofoam](https://github.com/MCluck90/kaleidofoam)
+
+
+## Original  KaleidoFoam README
 
 A kaleidoscope of features built for [Foam](https://foambubble.github.io/).
 
