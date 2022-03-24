@@ -8,7 +8,7 @@
     "url": "https://github.com/synesthesia/foamextensions"
   },
   "description": "A collection of features for Foam",
-  "version": "0.1.0",
+  "version": "2.0.0",
   "license": "MIT",
   "engines": {
     "vscode": "^1.59.0"
