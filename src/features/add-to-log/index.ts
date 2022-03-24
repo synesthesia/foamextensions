@@ -8,7 +8,7 @@ import { Feature } from '../types'
 export const addToLogFeature: Feature = {
   setup(context) {
     context.subscriptions.push(
-      vscode.commands.registerCommand('kaleidofoam.addToLog', async () => {
+      vscode.commands.registerCommand('foamextensions.addToLog', async () => {
         const editor = vscode.window.activeTextEditor
         if (!editor) {
           vscode.window.showErrorMessage(

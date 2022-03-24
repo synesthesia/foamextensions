@@ -33,19 +33,19 @@ export const toggleTodoTagsFeature: Feature = {
 
     context.subscriptions.push(
       vscode.commands.registerCommand(
-        'kaleidofoam.toggleTodoTag.focus',
+        'foamextensions.toggleTodoTag.focus',
         toggleTodoTag('focus')
       )
     )
     context.subscriptions.push(
       vscode.commands.registerCommand(
-        'kaleidofoam.toggleTodoTag.urgent',
+        'foamextensions.toggleTodoTag.urgent',
         toggleTodoTag('urgent')
       )
     )
     context.subscriptions.push(
       vscode.commands.registerCommand(
-        'kaleidofoam.toggleTodoTag.optional',
+        'foamextensions.toggleTodoTag.optional',
         toggleTodoTag('optional')
       )
     )

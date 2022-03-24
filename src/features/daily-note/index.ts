@@ -7,7 +7,7 @@ import { Feature } from '../types'
  */
 export const dailyNoteFeature: Feature = {
   setup: function (context): void | Promise<void> {
-    vscode.commands.registerCommand('kaleidofoam.openToday', () => {
+    vscode.commands.registerCommand('foamextensions.openToday', () => {
       createAndOpenDailyNote(new Date())
     })
   },

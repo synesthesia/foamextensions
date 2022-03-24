@@ -16,7 +16,7 @@ export const dailyEdgeLinksFeature: Feature = {
   setup(context: vscode.ExtensionContext) {
     context.subscriptions.push(
       vscode.commands.registerCommand(
-        'kaleidofoam.generateDailyEdgeLinks',
+        'foamextensions.generateDailyEdgeLinks',
         async () => {
           const editor = vscode.window.activeTextEditor
           if (!editor) {

@@ -18,21 +18,21 @@
   ],
   "activationEvents": [
     "onLanguage:markdown",
-    "onCommand:kaleidofoam.openToday",
-    "onCommand:kaleidofoam.openLastWeek",
-    "onCommand:kaleidofoam.openThisWeek",
-    "onCommand:kaleidofoam.openNextWeek",
-    "onCommand:kaleidofoam.generateDailyEdgeLinks",
-    "onCommand:kaleidofoam.toggleWordWrapColumn",
-    "onCommand:kaleidofoam.checkTodo",
-    "onCommand:kaleidofoam.uncheckTodo"
+    "onCommand:foamextensions.openToday",
+    "onCommand:foamextensions.openLastWeek",
+    "onCommand:foamextensions.openThisWeek",
+    "onCommand:foamextensions.openNextWeek",
+    "onCommand:foamextensions.generateDailyEdgeLinks",
+    "onCommand:foamextensions.toggleWordWrapColumn",
+    "onCommand:foamextensions.checkTodo",
+    "onCommand:foamextensions.uncheckTodo"
   ],
   "main": "./out/extension.js",
   "contributes": {
     "configuration": {
       "title": "FoamExtensions",
       "properties": {
-        "kaleidofoam.minutesBeforeNotifications": {
+        "foamextensions.minutesBeforeNotifications": {
           "type": "number",
           "default": 0,
           "description": "How many minutes before a scheduled notification should the notification fire?"
@@ -41,60 +41,60 @@
     },
     "commands": [
       {
-        "command": "kaleidofoam.openToday",
-        "title": "KaleidoFoam: Open Today"
+        "command": "foamextensions.openToday",
+        "title": "FoamExtensions: Open Today"
       },
       {
-        "command": "kaleidofoam.openLastWeek",
-        "title": "KaleidoFoam: Open Last Week"
+        "command": "foamextensions.openLastWeek",
+        "title": "FoamExtensions: Open Last Week"
       },
       {
-        "command": "kaleidofoam.openThisWeek",
-        "title": "KaleidoFoam: Open This Week"
+        "command": "foamextensions.openThisWeek",
+        "title": "FoamExtensions: Open This Week"
       },
       {
-        "command": "kaleidofoam.openNextWeek",
-        "title": "KaleidoFoam: Open Next Week"
+        "command": "foamextensions.openNextWeek",
+        "title": "FoamExtensions: Open Next Week"
       },
       {
-        "command": "kaleidofoam.openWeekOfNote",
-        "title": "KaleidoFoam: Open Week of Note"
+        "command": "foamextensions.openWeekOfNote",
+        "title": "FoamExtensions: Open Week of Note"
       },
       {
-        "command": "kaleidofoam.generateDailyEdgeLinks",
-        "title": "KaleidoFoam: Generate Daily Edge Links"
+        "command": "foamextensions.generateDailyEdgeLinks",
+        "title": "FoamExtensions: Generate Daily Edge Links"
       },
       {
-        "command": "kaleidofoam.toggleWordWrapColumn",
-        "title": "KaleidoFoam: Toggle Word Wrap Column"
+        "command": "foamextensions.toggleWordWrapColumn",
+        "title": "FoamExtensions: Toggle Word Wrap Column"
       },
       {
-        "command": "kaleidofoam.forwardTodo",
-        "title": "KaleidoFoam: Forward Todo"
+        "command": "foamextensions.forwardTodo",
+        "title": "FoamExtensions: Forward Todo"
       },
       {
-        "command": "kaleidofoam.unforwardTodo",
-        "title": "KaleidoFoam: Unforward Todo"
+        "command": "foamextensions.unforwardTodo",
+        "title": "FoamExtensions: Unforward Todo"
       },
       {
-        "command": "kaleidofoam.toggleTodo",
-        "title": "KaleidoFoam: Toggle Todo"
+        "command": "foamextensions.toggleTodo",
+        "title": "FoamExtensions: Toggle Todo"
       },
       {
-        "command": "kaleidofoam.addToLog",
-        "title": "KaleidoFoam: Add to Log"
+        "command": "foamextensions.addToLog",
+        "title": "FoamExtensions: Add to Log"
       },
       {
-        "command": "kaleidofoam.toggleTodoTag.focus",
-        "title": "KaleidoFoam: Toggle @focus"
+        "command": "foamextensions.toggleTodoTag.focus",
+        "title": "FoamExtensions: Toggle @focus"
       },
       {
-        "command": "kaleidofoam.toggleTodoTag.urgent",
-        "title": "KaleidoFoam: Toggle @urgent"
+        "command": "foamextensions.toggleTodoTag.urgent",
+        "title": "FoamExtensions: Toggle @urgent"
       },
       {
-        "command": "kaleidofoam.toggleTodoTag.optional",
-        "title": "KaleidoFoam: Toggle @optional"
+        "command": "foamextensions.toggleTodoTag.optional",
+        "title": "FoamExtensions: Toggle @optional"
       }
     ]
   },

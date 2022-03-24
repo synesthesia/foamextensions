@@ -23,7 +23,7 @@ function uncheckTodo(todoText: string, isDailyNote: boolean) {
 export const toggleTodoFeature: Feature = {
   setup(context) {
     context.subscriptions.push(
-      vscode.commands.registerCommand('kaleidofoam.toggleTodo', async () => {
+      vscode.commands.registerCommand('foamextensions.toggleTodo', async () => {
         const editor = vscode.window.activeTextEditor
         if (!editor) {
           vscode.window.showErrorMessage(

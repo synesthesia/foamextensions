@@ -16,22 +16,22 @@ export const weeklyNotesFeature: Feature = {
     )
 
     context.subscriptions.push(
-      vscode.commands.registerCommand('kaleidofoam.openLastWeek', () => {
+      vscode.commands.registerCommand('foamextensions.openLastWeek', () => {
         createAndOpenWeeklyNote(addDays(new Date(), -7))
       })
     )
     context.subscriptions.push(
-      vscode.commands.registerCommand('kaleidofoam.openThisWeek', () => {
+      vscode.commands.registerCommand('foamextensions.openThisWeek', () => {
         createAndOpenWeeklyNote(addDays(new Date(), 0))
       })
     )
     context.subscriptions.push(
-      vscode.commands.registerCommand('kaleidofoam.openNextWeek', () => {
+      vscode.commands.registerCommand('foamextensions.openNextWeek', () => {
         createAndOpenWeeklyNote(addDays(new Date(), 7))
       })
     )
     context.subscriptions.push(
-      vscode.commands.registerCommand('kaleidofoam.openWeekOfNote', () => {
+      vscode.commands.registerCommand('foamextensions.openWeekOfNote', () => {
         const editor = vscode.window.activeTextEditor
         const isDailyNote = editor?.document.uri.fsPath.includes('dailies')
         if (!editor || !isDailyNote) {

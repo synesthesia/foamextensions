@@ -16,7 +16,7 @@ export const toggleWordWrapColumnFeature: Feature = {
   setup(context) {
     context.subscriptions.push(
       vscode.commands.registerCommand(
-        'kaleidofoam.toggleWordWrapColumn',
+        'foamextensions.toggleWordWrapColumn',
         async () => {
           const workspaceFolder = vscode.workspace.workspaceFolders?.[0]
           if (!workspaceFolder) {

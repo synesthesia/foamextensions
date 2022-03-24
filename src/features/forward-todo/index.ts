@@ -224,73 +224,85 @@ async function unforwardWeeklyNote(editor: vscode.TextEditor) {
 export const forwardTodoFeature: Feature = {
   setup(context) {
     context.subscriptions.push(
-      vscode.commands.registerCommand('kaleidofoam.forwardTodo', async () => {
-        const editor = vscode.window.activeTextEditor
-        if (!editor) {
-          return vscode.window.showErrorMessage(
-            'Must open an editor to forward a todo'
-          )
-        }
+      vscode.commands.registerCommand(
+        'foamextensions.forwardTodo',
+        async () => {
+          const editor = vscode.window.activeTextEditor
+          if (!editor) {
+            return vscode.window.showErrorMessage(
+              'Must open an editor to forward a todo'
+            )
+          }
 
-        const workspaceFolder = vscode.workspace.workspaceFolders?.[0]
-        if (!workspaceFolder) {
-          vscode.window.showErrorMessage('Unable to access workspace folder.')
-          return
-        }
+          const workspaceFolder = vscode.workspace.workspaceFolders?.[0]
+          if (!workspaceFolder) {
+            vscode.window.showErrorMessage('Unable to access workspace folder.')
+            return
+          }
 
-        const noteTypeOption = getNoteType(editor.document)
-        if (isNone(noteTypeOption)) {
-          // If this isn't a daily or weekly note, just mark it as forwarded and forget it
-          const cursorPosition = editor.selection.active
-          const line = editor.document.lineAt(cursorPosition.line)
-          await editor.edit((editBuilder) => {
-            editBuilder.replace(line.range, line.text.replace('- [ ]', '- [>]'))
-          })
-          return
-        }
+          const noteTypeOption = getNoteType(editor.document)
+          if (isNone(noteTypeOption)) {
+            // If this isn't a daily or weekly note, just mark it as forwarded and forget it
+            const cursorPosition = editor.selection.active
+            const line = editor.document.lineAt(cursorPosition.line)
+            await editor.edit((editBuilder) => {
+              editBuilder.replace(
+                line.range,
+                line.text.replace('- [ ]', '- [>]')
+              )
+            })
+            return
+          }
 
-        const noteType = noteTypeOption.value
-        if (isDateNote(noteType)) {
-          forwardFromDailyNote(editor, workspaceFolder, noteType.date)
-        } else if (isWeeklyNote(noteType)) {
-          forwardFromWeeklyNote(editor, noteType.start)
+          const noteType = noteTypeOption.value
+          if (isDateNote(noteType)) {
+            forwardFromDailyNote(editor, workspaceFolder, noteType.date)
+          } else if (isWeeklyNote(noteType)) {
+            forwardFromWeeklyNote(editor, noteType.start)
+          }
         }
-      })
+      )
     )
 
     context.subscriptions.push(
-      vscode.commands.registerCommand('kaleidofoam.unforwardTodo', async () => {
-        const editor = vscode.window.activeTextEditor
-        if (!editor) {
-          return vscode.window.showErrorMessage(
-            'Must open an editor to unforward a todo'
-          )
-        }
+      vscode.commands.registerCommand(
+        'foamextensions.unforwardTodo',
+        async () => {
+          const editor = vscode.window.activeTextEditor
+          if (!editor) {
+            return vscode.window.showErrorMessage(
+              'Must open an editor to unforward a todo'
+            )
+          }
 
-        const workspaceFolder = vscode.workspace.workspaceFolders?.[0]
-        if (!workspaceFolder) {
-          vscode.window.showErrorMessage('Unable to access workspace folder.')
-          return
-        }
+          const workspaceFolder = vscode.workspace.workspaceFolders?.[0]
+          if (!workspaceFolder) {
+            vscode.window.showErrorMessage('Unable to access workspace folder.')
+            return
+          }
 
-        const noteTypeOption = getNoteType(editor.document)
-        if (isNone(noteTypeOption)) {
-          // If this isn't a daily or weekly note, just remove the forwarded marker and forget it
-          const cursorPosition = editor.selection.active
-          const line = editor.document.lineAt(cursorPosition.line)
-          await editor.edit((editBuilder) => {
-            editBuilder.replace(line.range, line.text.replace('- [>]', '- [ ]'))
-          })
-          return
-        }
+          const noteTypeOption = getNoteType(editor.document)
+          if (isNone(noteTypeOption)) {
+            // If this isn't a daily or weekly note, just remove the forwarded marker and forget it
+            const cursorPosition = editor.selection.active
+            const line = editor.document.lineAt(cursorPosition.line)
+            await editor.edit((editBuilder) => {
+              editBuilder.replace(
+                line.range,
+                line.text.replace('- [>]', '- [ ]')
+              )
+            })
+            return
+          }
 
-        const noteType = noteTypeOption.value
-        if (isDateNote(noteType)) {
-          unforwardTodo(editor)
-        } else if (isWeeklyNote(noteType)) {
-          unforwardWeeklyNote(editor)
+          const noteType = noteTypeOption.value
+          if (isDateNote(noteType)) {
+            unforwardTodo(editor)
+          } else if (isWeeklyNote(noteType)) {
+            unforwardWeeklyNote(editor)
+          }
         }
-      })
+      )
     )
   },
 }
