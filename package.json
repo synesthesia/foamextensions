@@ -1,13 +1,14 @@
 {
-  "name": "kaleidofoam",
-  "displayName": "KaleidoFoam",
-  "publisher": "MikeCluck",
+  "name": "@synesthesia/foamextensions",
+  "displayName": "FoamExtensions",
+  "publisher": "synesthesia",
+  "author": "Julian Elve<julian@elve.london>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/MCluck90/kaleidofoam"
+    "url": "https://github.com/synesthesia/foamextensions"
   },
   "description": "A collection of features for Foam",
-  "version": "1.1.3",
+  "version": "0.1.0",
   "license": "MIT",
   "engines": {
     "vscode": "^1.59.0"
@@ -29,7 +30,7 @@
   "main": "./out/extension.js",
   "contributes": {
     "configuration": {
-      "title": "KaleidoFoam",
+      "title": "FoamExtensions",
       "properties": {
         "kaleidofoam.minutesBeforeNotifications": {
           "type": "number",
